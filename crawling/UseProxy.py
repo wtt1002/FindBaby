@@ -5,15 +5,16 @@ from urllib import request
 
 if __name__ == '__main__':
     #访问网址
-    url = 'http://www.cip.cc/'
+    url = 'http://www.baobeihuijia.com/list.aspx?tid=1'
     #代理IP
-    proxy = {'http':'203.174.112.13:3128'}
+    proxy = {'http':'61.143.17.83:808'}
     #创建ProxyHandler
     proxy_support = request.ProxyHandler(proxy)
     #创建Opener
     opener = request.build_opener(proxy_support)
     #添加User-Agent
     opener.addheaders = [('User-Agent','Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36')]
+    #opener.addheaders = [('User-Agent','Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; en) Presto/2.8.131 Version/11.11')]
     #安装Opener
     request.install_opener(opener)
     #使用自己安装好的Opener
