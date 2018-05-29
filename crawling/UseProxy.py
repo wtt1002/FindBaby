@@ -7,7 +7,7 @@ if __name__ == '__main__':
     #访问网址
     url = 'http://www.baobeihuijia.com/list.aspx?tid=1'
     #代理IP
-    proxy = {'http':'61.143.17.83:808'}
+    proxy = {'http':'58.19.80.227:808'}
     #创建ProxyHandler
     proxy_support = request.ProxyHandler(proxy)
     #创建Opener
