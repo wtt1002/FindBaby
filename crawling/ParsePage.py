@@ -9,8 +9,9 @@ def parse_total_page(html):
     if html == 'fail':
         print('parse_one_page_fail')
         return 'fail'
-    patten = re.compile('<input id="(.+?)-hid" value=.*? />',re.S)
-    items = re.findall(patten, html)
+    # patten = re.compile('<input id="(.+?)-hid" value=.*? />', re.S)
+    pattern = re.compile('<input id="(\d+)-hid" value', re.S)
+    items = re.findall(pattern, html)
     '''
     for item in items:
         # print(item)
@@ -22,13 +23,11 @@ def parse_total_page(html):
 
 
 def get_detail_info(html):
-    if html == 'fail':
-        print('get_detail_info_fail')
-        return 'fail'
     pattern = re.compile('<li><span>.*?</span>(.*?)</li>', re.S)
     info_items = re.findall(pattern, html)  # 解析详情页的数据
     print('  宝贝详情: ' + str(info_items))
     print('——————————————————————————————————————————————————————————————————————————————————————————————————————')
+    # print(info_items)
     return info_items
 
 
