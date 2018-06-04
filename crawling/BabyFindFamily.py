@@ -40,7 +40,7 @@ def main(offset):
         # 获取详情页面
         url_detail = 'http://www.baobeihuijia.com/view.aspx?type=2&id=' + str(item)
         # 设置随机时间延迟爬取详情页
-        random_sleep_time = random.uniform(0.1, 3.3)
+        random_sleep_time = random.uniform(0.1, 2.1)
         print('     延迟: ' + str(random_sleep_time) + 's' + '    页数:' + str(offset))
         time.sleep(random_sleep_time)
         # 获取详情页面
@@ -73,10 +73,10 @@ if __name__ == '__main__':
         ws.append(['寻亲类别', '寻亲编号', '姓名', '性别', '出生日期', '失踪时身高', '失踪时间', '失踪人所在地',
                    '失踪地点', '寻亲者特征描述', '其他资料', '注册时间', '跟进志愿者'])
         wb.save('data.xlsx')
-    for i in range(1, 500):
+    for i in range(346, 500):
         flag = main(i)
         if flag == "failed":
             continue
         wb.save('data.xlsx')
         print('###SUCCESS###第' + str(i) + '页\n')
-    # wb.close('data.xlsx')
+# wb.close('data.xlsx')
